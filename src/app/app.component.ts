@@ -1,3 +1,4 @@
+import { Hero } from './hero';
 import { Component } from '@angular/core';
 
 const HEROES: Hero[] = [
@@ -28,7 +29,3 @@ export class AppComponent {
   }
 }
 
-export class Hero {
-  id: number;
-  name: string;
-}
