@@ -46,10 +46,12 @@ export class HeroService {
       .catch(this.handleError);
   }
 
-  getHeroesSlowly(): Promise<Hero[]> {
-    return new Promise(resolve => {
-      setTimeout(() => resolve(this.getHeroes()), 2000);
-    });
+  delete(id: number): Promise<void> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.delete(url, { headers: this.headers })
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
