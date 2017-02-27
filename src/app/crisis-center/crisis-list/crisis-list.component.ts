@@ -38,6 +38,6 @@ export class CrisisListComponent implements OnInit {
   }
 
   onSelect(crisis: Crisis): void {
-    this.router.navigate(['/crisis', crisis.id]);
+    this.router.navigate([crisis.id], { relativeTo: this.route });
   }
 }
